@@ -1,0 +1,11 @@
+- unless @one_zenbitexs.empty?
+  .panel.panel-primary
+    .panel-heading: span = t('.one')
+    = render partial: 'table', locals: {zenbitexs: @one_zenbitexs}
+- unless @all_zenbitexs.empty?
+  .panel.panel-success
+    .panel-heading: span = t('.all')
+    = render partial: 'table', locals: {zenbitexs: @all_zenbitexs}
+
+- if @all_zenbitexs.empty? and @one_zenbitexs.empty?
+  h3.text-info.text-center = t('.empty')
